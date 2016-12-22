@@ -12,16 +12,10 @@ export const routeTypes = keymirror({
   NEW_SITE: null,
   // Represents the main page for a site
   SITE: null,
-  // Represents a site content editor page
-  SITE_CONTENT: null,
-  // Represents a site media page
-  SITE_MEDIA: null,
   // Represents a site builds page
   SITE_BUILDS: null,
   // Represents a site setting page
   SITE_SETTINGS: null,
-  // Represents an edit page
-  PAGE_EDIT: null
 });
 
 export const siteActionTypes = keymirror({
@@ -36,8 +30,6 @@ export const siteActionTypes = keymirror({
 
 //TODO: Is there a way to generate this dynamically with a loop?
 export const sideNavPaths = {
-  MEDIA: 'media',
-  PAGES: 'pages',
   SETTINGS: 'settings',
   BUILDS: 'builds'
 };

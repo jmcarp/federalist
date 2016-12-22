@@ -4,11 +4,8 @@ import { Route, Link, IndexRedirect, IndexRoute, Redirect } from 'react-router';
 import App from './components/app';
 import SiteList from './components/siteList/siteList';
 import SiteContainer from './components/siteContainer';
-import SitePagesContainer from './bundles/pagesContainerBundle';
-import SiteEditorContainer from './components/site/editor/editorContainer';
 import SiteBuilds from './components/site/siteBuilds';
 import SiteBuildLogs from './components/site/siteBuildLogs';
-import SiteMediaContainer from './components/site/siteMediaContainer';
 import SiteSettings from './components/site/siteSettings';
 import NewSite from './components/AddSite';
 import NotFound from './components/NotFound';
@@ -20,13 +17,7 @@ export default (
       <IndexRoute component={SiteList}/>
       <Route path="new" component={NewSite} />
       <Route path=":id" component={SiteContainer}>
-        <IndexRedirect to="tree" />
-        <Route path="tree" component={SitePagesContainer}>
-          <Route path="(**/):fileName" component={SitePagesContainer} />
-        </Route>
-        <Route path="new/:branch(/:fileName)" component={SiteEditorContainer} isNewPage={true} />
-        <Route path="edit/:branch/(**/):fileName" component={SiteEditorContainer}/>
-        <Route path="media" component={SiteMediaContainer}/>
+        <IndexRedirect to="settings" />
         <Route path="settings" component={SiteSettings}/>
         <Route path="builds">
           <IndexRoute component={SiteBuilds}/>
